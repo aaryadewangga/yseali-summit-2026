@@ -268,11 +268,15 @@ details[open] summary::after{content:"\2212"}
   .hl-grid,.ph-grid,.th-grid,.ff-grid{grid-template-columns:1fr}
   .hl{border-right:0}
   .hl:nth-child(2n){border-right:0}
-  .tl{grid-template-columns:1fr;gap:26px;margin-top:34px}
-  .tl-col{text-align:left;padding:0 0 0 34px}
+  /* vertical timeline: gap moved into padding so the line runs unbroken */
+  .tl{grid-template-columns:1fr;gap:0;margin-top:34px}
+  .tl-col{text-align:left;padding:0 0 30px 34px}
+  .tl-col:last-child{padding-bottom:0}
   .tl-col::before{top:0;bottom:0;left:9px;right:auto;width:2px;height:auto}
-  .tl-col:first-child::before,.tl-col:last-child::before{left:9px}
+  .tl-col:first-child::before{left:9px;top:12px;bottom:0}
+  .tl-col:last-child::before{left:9px;right:auto;top:0;height:12px;bottom:auto}
   .tl-dot{position:absolute;left:0;top:2px;margin:0}
+  .tl-col.key .tl-dot{left:-2px;top:0;margin-top:0}
   .ff-img{height:220px}
   section{padding:58px 0}
   .hero{padding:90px 0}
