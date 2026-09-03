@@ -234,6 +234,7 @@ details[open] summary::after{content:"\2212"}
   letter-spacing:1.68px;text-transform:uppercase;color:#fff;margin-bottom:26px;
 }
 .f-grid{display:grid;grid-template-columns:324px 155px 1fr;gap:48px;margin-bottom:40px}
+.f-grid > *{min-width:0}
 .f-logoslot{
   border:1px dashed #3A5068;border-radius:4px;padding:24px 20px;
   font-family:var(--head);font-weight:700;font-size:22px;line-height:28px;color:#fff;
@@ -247,7 +248,8 @@ details[open] summary::after{content:"\2212"}
   display:flex;align-items:center;justify-content:center;
 }
 .f-badge svg{width:15px;height:15px;fill:#000}
-.f-handles{display:flex;align-items:center;gap:10px;flex-wrap:nowrap;white-space:nowrap}
+.f-handles{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+@media (min-width:1061px){.f-handles{flex-wrap:nowrap;white-space:nowrap}}
 .f-handles a{font-size:17px;line-height:20px}
 .f-handles .sep{width:1px;height:15px;background:#C8C8C8;display:inline-block}
 .f-bottom{border-top:1px solid #2A3E54;padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:#7C8FA3}
@@ -275,6 +277,66 @@ details[open] summary::after{content:"\2212"}
   section{padding:58px 0}
   .hero{padding:90px 0}
   .nav-links a.btn{font-size:16px}
+}
+
+/* ---------- Phone ---------- */
+@media (max-width:600px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  h1{font-size:32px;line-height:38px}
+  h2{font-size:25px;line-height:32px}
+  h3{font-size:20px;line-height:26px}
+
+  /* nav: brand on top, links wrap and centre below; not sticky on phone */
+  .nav{position:static}
+  .nav .wrap{justify-content:center;gap:10px;padding-top:14px;padding-bottom:14px}
+  .nav-brand{width:100%;text-align:center;font-size:18px}
+  .nav-links{margin-left:0;width:100%;justify-content:center;flex-wrap:wrap;gap:12px 16px}
+  .nav-links a{font-size:14px}
+  .nav-links a.btn{font-size:14px;padding:8px 20px;border-radius:3px}
+
+  /* hero */
+  .hero{padding:64px 0}
+  .hero h1{max-width:none}
+  .hero-dates{display:block;width:100%}
+  .hero-dates span{display:block;width:100%;border-right:0;border-bottom:1px solid rgba(255,255,255,.3);padding:10px 16px;font-size:14px}
+  .hero-dates span:last-child{border-bottom:0}
+  .hero .btn,.cta .btn,.elig-cta .btn{display:block;width:100%;text-align:center;font-size:17px;padding:14px 20px}
+  .hero-place{font-size:11px;letter-spacing:.12em}
+
+  /* eligibility */
+  .elig-row{grid-template-columns:24px 1fr;gap:14px;padding:20px 0}
+  .tick{width:24px;height:24px}
+  .tick svg{width:12px;height:12px}
+  .elig-row .txt{font-size:15px;line-height:25px}
+  .elig-note{padding:20px 18px;text-align:left}
+
+  /* highlights */
+  .hl{padding:28px 22px}
+
+  /* futures fair */
+  .ff-img{height:180px;border-radius:12px}
+  .ff-body{padding:22px 20px}
+
+  /* faq */
+  .faq-tabs{gap:8px}
+  .faq-tabs button{font-size:13px;padding:9px 14px}
+  summary{font-size:16px;line-height:26px;padding:16px 36px 16px 0}
+  summary::after{right:2px;top:14px}
+  .answer{padding-right:0}
+
+  /* footer: single column, everything left, nothing forced wide */
+  .f-grid{grid-template-columns:1fr;gap:34px}
+  .f-logoslot{padding:20px 18px;font-size:20px}
+  .footer h5{font-size:16px;letter-spacing:1.2px;margin-bottom:16px}
+  .f-nav a{font-size:16px;margin-bottom:12px}
+  .f-social .row{align-items:flex-start;gap:12px;margin-bottom:20px}
+  .f-badge{width:26px;height:26px}
+  .f-badge svg{width:13px;height:13px}
+  .f-handles{gap:6px 10px}
+  .f-handles a{font-size:15px;line-height:22px}
+  .f-handles .sep{display:none}
+  .f-bottom{flex-direction:column;gap:10px;font-size:12px}
 }
 </style>
 </head>
